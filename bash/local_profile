@@ -1,0 +1,11 @@
+# Here's an example of what a local profile might contain
+
+#export PATH=$PATH:/usr/local/whatever/bin/
+#export PYTHONPATH=$PYTHONPATH:/path/to/some/project/
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/netpbm/lib
+#export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/netpbm/lib
+
+# Add numpy c stuff to path
+#export C_INCLUDE_PATH=$C_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+#export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2

@@ -1,0 +1,5 @@
+alias ll="ls -l"
+alias la="ls -a"
+alias l="ls"
+alias e="emacs"
+alias ipy="ipython notebook --pylab=inline"
