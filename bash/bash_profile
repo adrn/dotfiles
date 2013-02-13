@@ -9,7 +9,7 @@ source ~/.alias
 export PATH=$PATH:$HOME/bin
 
 # If I want some default python code to run when I start the interpreter
-#export PYTHONSTARTUP="$HOME/.auto_complete_python.py"
+#export PYTHONSTARTUP="$HOME/.python_startup.py"
 
 if [[ -a ~/.local_profile ]]
 then
