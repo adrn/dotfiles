@@ -1,0 +1,14 @@
+*~
+.DS_Store
+*.pyc
+*.log
+*.aux
+*.pdf
+*.synctex.gz
+*.o
+*.so
+*.mp
+*.bbl
+*.blg
+*.top
+*.tui

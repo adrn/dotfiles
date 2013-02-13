@@ -1,0 +1,12 @@
+[user]
+	name = Adrian Price-Whelan
+	email = adrian.prw@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+[apply]
+	whitespace = nowarn
