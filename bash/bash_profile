@@ -11,4 +11,7 @@ export PATH=$PATH:$HOME/bin
 # If I want some default python code to run when I start the interpreter
 #export PYTHONSTARTUP="$HOME/.auto_complete_python.py"
 
-source ~/.local_profile
+if [[ -a ~/.local_profile ]]
+then
+  source ~/.local_profile
+fi
