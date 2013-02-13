@@ -1,0 +1,118 @@
+#!/usr/bin/env python
+
+"""
+This is the install script! It's a simple Python script, and don't worry
+it won't overwrite anything without asking for your permission first.
+
+"""
+
+import os, sys
+import glob
+import re
+import shutil
+
+# Fancy colors..
+FAIL = '\033[1;31m'
+ENDC = '\033[0m'
+
+def yes_or_no(text):
+    """ A more robust 'raw_input' that asks the user for a yes or no response """
+    y_n = "<<>>"
+    while y_n.lower() not in ["y", "n", ""]:
+        y_n = raw_input(text)
+    
+    return y_n.lower()
+    
+def should_make_link(source_name, link_name):
+    """
+    Test whether the link name already exists. If it does, prompt the user
+    and ask whether we should overwrite it. If they say yes, it backs up the
+    old file to <old_filename>_bkup.
+    
+    """
+    
+    y_n = "y" if args.overwrite_all else "derp"
+    if os.path.exists(link_name):
+        if args.overwrite_all:
+            y_n = "y"
+        else:
+            y_n = yes_or_no("File '{0}' already exists. Overwrite? "
+                            "[y/N] ".format(link_name))
+        
+        if y_n == "y":
+            shutil.copyfile(link_name, "{0}_bkup".format(link_name))
+            os.remove(link_name)
+        elif y_n == "n" or y_n == "":
+            return False
+    
+    return True
+
+def source_link(file):
+    """ 
+    Given a filename within the dotfiles project, make the source path and
+    link path strings.
+    """
+    basename = os.path.split(file)[1]
+    source_name = os.path.join(os.getcwd(), file)
+    link_name = os.path.join(os.path.expanduser("~"), ".{0}".format(basename))
+    
+    return source_name, link_name
+
+def main():
+    ###############################################################################
+    # BASH
+    ###############################################################################
+    for file in glob.glob("bash/*"):
+        source_name, link_name = source_link(file)
+        
+        if should_make_link(source_name, link_name):
+            os.symlink(source_name, link_name)
+    
+    ###############################################################################
+    # Python
+    ###############################################################################
+    
+    # Link to Python interpreter startup script
+    file = "python/python_startup.py"
+    source_name, link_name = source_link(file)
+    if should_make_link(source_name, link_name):
+        os.symlink(source_name, link_name)
+    
+    # iPython
+    _ipy_startup = os.path.expanduser("~/.ipython/profile_default/startup/")
+    link_name = os.path.join(_ipy_startup, "python_startup.py")
+    if should_make_link(source_name, link_name):
+        os.symlink(source_name, link_name)
+    
+    # matplotlib
+    file = "python/matplotlibrc"
+    source_name, link_name = source_link(file)
+    link_name = os.path.expanduser("~/.matplotlib/matplotlibrc")
+    
+    if should_make_link(source_name, link_name):
+        os.symlink(source_name, link_name)
+
+if __name__ == "__main__":
+    try:
+        import argparse
+    except ImportError:
+        print(FAIL + "[ERROR]" + ENDC + ": Seriously, you're still using Python "
+              "2.6?")
+        raise
+        
+    parser = argparse.ArgumentParser(description="Install adrn's dotfiles.")
+    parser.add_argument('-v','--verbose', help='Be chatty.', 
+                        action='store_true', dest='verbose')
+    parser.add_argument('-o','--overwrite-all', help='Overwrite any existing files', 
+                        action='store_true', dest='overwrite_all', default=False)
+    args = parser.parse_args()
+    
+    if args.overwrite_all:
+        y_n = yes_or_no("You specified that you want to overwrite all existing "
+                        "files. Are you *sure* you want to do that? [y/N]: ")
+        
+        if y_n.lower() == "n":
+            print("ABORTING")
+            sys.exit(0)        
+    
+    main()
