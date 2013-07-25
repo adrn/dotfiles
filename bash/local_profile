@@ -7,5 +7,38 @@
 #export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/netpbm/lib
 
 # Add numpy c stuff to path
-#export C_INCLUDE_PATH=$C_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
-#export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+
+# Python hacks
+export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/apwlib/:/Users/adrian/projects/ptf/:/Users/adrian/projects/streams/
+
+function astropy_adrn() {
+	 export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/astropy_adrn/build/lib.macosx-10.7-intel-2.7/
+}
+
+function codecolor {
+    if [ -z "$1" ]; then
+        echo "Usage: codecolor <filename>"
+        return
+    fi
+
+    pygmentize -f rtf $1 > $1.rtf
+}
+
+function rawtofits {
+    if [ -z "$1" ]; then
+        echo "Usage: rawtofits <filename>";
+        return
+    fi
+
+    dcraw -D -6 -W -g 1 0 -c -j $1 > $1.pgm;
+    pnmtofits $1.pgm > $1.fits;
+}
+
+export CODAPATH="/Applications/Coda 2.app"
+
+# Add nbconvert to path
+export PATH=$PATH:/Users/adrian/projects/nbconvert/
+
+astropy_adrn
