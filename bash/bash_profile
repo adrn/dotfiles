@@ -1,6 +1,9 @@
 # This profile contains cross-platform profile stuffs. Anything that is
 #   machine specific goes in ~/.local_profile
 
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 source ~/.env
 source ~/.prompt
 source ~/.alias
