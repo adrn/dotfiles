@@ -1,5 +1,7 @@
 alias ll="ls -l"
 alias la="ls -a"
 alias l="ls"
+alias emacs="emacs -nw"
 alias e="emacs"
 alias ipy="ipython notebook --pylab=inline"
+alias scicoder="cd ~/projects/scicoder_2013-07"
