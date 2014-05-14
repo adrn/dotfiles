@@ -1,21 +1,33 @@
 # Here's an example of what a local profile might contain
-
 #export PATH=$PATH:/usr/local/whatever/bin/
 #export PYTHONPATH=$PYTHONPATH:/path/to/some/project/
 
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/netpbm/lib
-#export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/netpbm/lib
+# added by Anaconda 1.8.0 installer
+export PATH="/Users/adrian/anaconda/bin:$PATH"
 
-# Add numpy c stuff to path
-export C_INCLUDE_PATH=$C_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
-export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+# export C_INCLUDE_PATH=$C_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
+# export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/Library/Python/2.7/site-packages/numpy/core/include:/usr/local/include/:/usr/local/include/freetype2
 
 # Python hacks
-export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/apwlib/:/Users/adrian/projects/ptf/:/Users/adrian/projects/streams/
+export PYTHONPATH=/Users/adrian/projects/apwlib:/Users/adrian/projects/ptf:/Users/adrian/projects/streams
+
+# astropy master
+# export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/astropy/build/lib.macosx-10.9-intel-2.7
+export _PYTHONPATH=$PYTHONPATH
 
 function astropy_adrn() {
-	 export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/astropy_adrn/build/lib.macosx-10.7-intel-2.7/
+     export PYTHONPATH=/Users/adrian/projects/astropy_adrn/build/lib.macosx-10.5-x86_64-2.7/:$PYTHONPATH
 }
+
+function astropy_stable() {
+     export PYTHONPATH=/Users/adrian/projects/astropy_stable/build/lib.macosx-10.9-intel-2.7/:$PYTHONPATH
+}
+
+function astropy_reset() {
+     export PYTHONPATH=$_PYTHONPATH
+}
+
+#astropy_stable
 
 function codecolor {
     if [ -z "$1" ]; then
@@ -39,6 +51,37 @@ function rawtofits {
 export CODAPATH="/Applications/Coda 2.app"
 
 # Add nbconvert to path
-export PATH=$PATH:/Users/adrian/projects/nbconvert/
+export PATH=$PATH:/Users/adrian/projects/nbconvert
 
-astropy_adrn
+# show ~/Library in finder
+alias show_library="chflags nohidden ~/Library"
+
+ur_setup() {
+    eval `/Users/adrian/.ureka/ur_setup $*`
+}
+ur_forget() {
+    eval `/Users/adrian/.ureka/ur_forget $*`
+}
+
+iraf() {
+    ur_setup;
+    xgterm;
+    ur_forget;
+}
+
+export PATH=$PATH:/usr/local/wcstools-3.8.7/bin
+export PYTHONPATH=$PYTHONPATH:/Users/adrian/python
+
+export STREAMSPATH=/Users/adrian/projects/streams
+export PATH=$PATH:"${STREAMSPATH}/bin"
+alias streams="cd $STREAMSPATH"
+
+export ASTROML_DATA="${HOME}/Documents/GraduateSchool/NYCastroML/data/"
+
+function ipy_dev() {
+    source ~/projects/ipython/venv/bin/activate
+    ipython notebook --pylab=inline
+}
+
+# virtualenvwrapper
+source ~/anaconda/bin/virtualenvwrapper.sh
