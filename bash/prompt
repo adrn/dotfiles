@@ -40,11 +40,17 @@ RESET="\[\033[m\]"
 # Credit for these functions goes to
 # https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
 function parse_git_dirty() {
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " (!) "
+    TMP=$(git status 2> /dev/null | tail -n1);
+    if [[ $TMP != "nothing to commit, working directory clean" ]]; then
+        echo "(!) ";
+    else
+        echo "";
+    fi
+    return;
 }
 
 function parse_git_branch() {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
 }
 
 export SCREEN_TITLE=""
@@ -52,7 +58,7 @@ if [ "$TERM" == "screen" ]; then
     export SCREEN_TITLE="$WHITE[SCREEN] "
 fi
 
-export PS1="$SCREEN_TITLE$BOLD_RED\h$RESET $BOLD_GREEN[\w]$BOLD_PURPLE \$([[ -n \$(git branch 2> /dev/null) ]] && echo \"git:\")\$(parse_git_branch)$GREEN% $RESET"
+export PS1="$SCREEN_TITLE$LIGHT_GRAY\h$RESET $CYAN[\w]$GREEN \$([[ -n \$(git branch 2> /dev/null) ]] && echo \"git:\")\$(parse_git_branch)$RED \$([[ -n \$(git branch 2> /dev/null) ]] && echo \"\$(parse_git_dirty)\")$WHITE% $RESET"
 
 # For multi-line commands:
-export PS2="$BOLD_GREEN> $RESET"
+export PS2="$GREEN> $RESET"
