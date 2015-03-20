@@ -7,3 +7,4 @@ alias ipy="ipython notebook"
 alias scicoder="cd ~/projects/scicoder_2013-07"
 alias yolo='git commit -am "DEAL WITH IT" && git push origin master'
 alias gits='git status'
+alias p='python'
