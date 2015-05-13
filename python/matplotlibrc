@@ -3,9 +3,8 @@ backend: Qt4Agg
 backend.qt4: PySide
 
 # fonty stuffs
-font.family: serif
-font.serif: Computer Sans
-text.usetex: True
+font.family: CMU Serif
+text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
 axes.titlesize: 26
 axes.labelsize: 22
