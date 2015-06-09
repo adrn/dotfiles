@@ -1,6 +1,6 @@
 # Yea, get over it
 backend: Qt4Agg
-backend.qt4: PySide
+#backend.qt4: PySide
 
 # fonty stuffs
 font.family: CMU Serif
