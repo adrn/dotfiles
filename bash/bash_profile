@@ -18,3 +18,5 @@ if [[ -a ~/.local_profile ]]
 then
   source ~/.local_profile
 fi
+
+# export PATH=/usr/local/lib:/usr/local/bin:$PATH
