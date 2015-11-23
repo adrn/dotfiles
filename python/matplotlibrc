@@ -3,7 +3,8 @@ backend: Qt4Agg
 #backend.qt4: PySide
 
 # fonty stuffs
-font.family: CMU Serif
+# font.family: CMU Serif
+font.family: cmr10
 text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
 axes.titlesize: 26
@@ -46,4 +47,5 @@ grid.linestyle: -
 grid.linewidth: 0.75     # in points
 
 # color
-axes.color_cycle : 1A1A1A, 2166AC, 006837, B2182B, 762A83, E08214, 80CDC1, C51B7D, FEE08B
+axes.prop_cycle: cycler('color', ['1A1A1A', '2166AC', '006837', 'B2182B', '762A83', 'E08214', '80CDC1', 'C51B7D', 'FEE08B'])
+# axes.prop_cycle :
