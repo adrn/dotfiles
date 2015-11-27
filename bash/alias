@@ -8,3 +8,5 @@ alias scicoder="cd ~/projects/scicoder_2013-07"
 alias yolo='git commit -am "DEAL WITH IT" && git push origin master'
 alias gits='git status'
 alias p='python'
+alias gfortran='gfortran -ffixed-line-length-0'
+alias git-submod-update='git submodule update --remote --merge'
