@@ -11,9 +11,13 @@ function pypath_reset() {
      export PYTHONPATH=$_PYTHONPATH
 }
 
-function astropy_master() {
+function astropy_master2() {
      export PYTHONPATH=/Users/adrian/projects/astropy/build/lib.macosx-10.5-x86_64-2.7/:$PYTHONPATH
 }
+function astropy_master3() {
+     export PYTHONPATH=/Users/adrian/projects/astropy/build/lib.macosx-10.5-x86_64-3.5/:$PYTHONPATH
+}
+
 
 # show ~/Library in finder
 alias show_library="chflags nohidden ~/Library"
@@ -46,6 +50,10 @@ function pytwo() {
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/mpipool
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/biff/build/lib.macosx-10.5-x86_64-2.7
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-2.7
+
+    # virtualenvwrapper
+    source ~/anaconda/bin/virtualenvwrapper.sh
+
 }
 
 function pythree() {
@@ -60,7 +68,7 @@ function pythree() {
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-3.5
 }
 
-pytwo
+pythree # I'm DOING IT, MOM!!
 
 export ASTROML_DATA="${HOME}/Documents/GraduateSchool/NYCastroML/data/"
 
@@ -68,9 +76,6 @@ function ipy_dev() {
     source ~/projects/ipython/venv/bin/activate
     ipython notebook --pylab=inline
 }
-
-# virtualenvwrapper
-source ~/anaconda/bin/virtualenvwrapper.sh
 
 # projects
 export PROJECTSPATH=~/projects
