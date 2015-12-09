@@ -3,8 +3,8 @@ backend: Qt4Agg
 #backend.qt4: PySide
 
 # fonty stuffs
-# font.family: CMU Serif
-font.family: cmr10
+font.family: CMU Serif
+# font.family: cmr10
 text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
 axes.titlesize: 26
