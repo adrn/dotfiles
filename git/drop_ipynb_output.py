@@ -59,12 +59,24 @@ lets the user specify whether the ouptut of a notebook should be suppressed
 in the notebook's metadata, and works for IPython v3.0.
 """
 
+import os
 import sys
 import json
+import fnmatch
+
+def dumpit(json_in):
+    json.dump(json_in, sys.stdout, sort_keys=True, indent=1, separators=(",",": "))
 
 nb = sys.stdin.read()
-
+nb_filename = sys.argv[1]
 json_in = json.loads(nb)
+
+with open(os.path.expanduser("~/.config/git/clean_ipynb_ignore"), "r") as f:
+    for line in f.readlines():
+        if line.strip():
+            check = fnmatch.fnmatch(nb_filename, line)
+            if check: dumpit(json_in)
+
 nb_metadata = json_in["metadata"]
 suppress_output = True
 if "git" in nb_metadata:
@@ -91,4 +103,4 @@ else:
     for cell in json_in["cells"]:
         strip_output_from_cell(cell)
 
-json.dump(json_in, sys.stdout, sort_keys=True, indent=1, separators=(",",": "))
+dumpit(json_in)
