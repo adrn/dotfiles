@@ -7,8 +7,8 @@ font.family: CMU Serif
 # font.family: cmr10
 text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
-axes.titlesize: 26
-axes.labelsize: 22
+#axes.titlesize: 26
+#axes.labelsize: 22
 
 # styles
 lines.linestyle   : -       # solid line
@@ -23,6 +23,7 @@ patch.edgecolor        : none
 figure.figsize: 8,6   # default figure size
 figure.facecolor: white
 figure.edgecolor: white
+#figure.dpi: 256
 axes.facecolor: ffffff
 axes.edgecolor: 333333
 axes.formatter.limits: -7, 10  # scientific notation limits
