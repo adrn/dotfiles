@@ -7,8 +7,6 @@ font.family: CMU Serif
 # font.family: cmr10
 text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
-#axes.titlesize: 26
-#axes.labelsize: 22
 
 # styles
 lines.linestyle   : -       # solid line
@@ -23,7 +21,6 @@ patch.edgecolor        : none
 figure.figsize: 8,6   # default figure size
 figure.facecolor: white
 figure.edgecolor: white
-#figure.dpi: 256
 axes.facecolor: ffffff
 axes.edgecolor: 333333
 axes.formatter.limits: -7, 10  # scientific notation limits
@@ -35,8 +32,6 @@ xtick.color: 333333
 ytick.color: 333333
 xtick.direction: in
 ytick.direction: in
-xtick.labelsize: 18
-ytick.labelsize: 18
 xtick.major.size: 8      # major tick size in points
 xtick.minor.size: 4      # minor tick size in points
 ytick.major.size: 8      # major tick size in points
@@ -49,4 +44,3 @@ grid.linewidth: 0.75     # in points
 
 # color
 axes.prop_cycle: cycler('color', ['1A1A1A', '2166AC', '006837', 'B2182B', '762A83', 'E08214', '80CDC1', 'C51B7D', 'FEE08B'])
-# axes.prop_cycle :
