@@ -43,29 +43,29 @@ export PATH=$PATH:"${STREAMSPATH}/bin"
 function pytwo() {
     pypath_reset
     source activate two
-    export PYTHONPATH=$PYTHONPATH:$STREAMSPATH:/Users/adrian/projects/gary/build/lib.macosx-10.5-x86_64-2.7
+    # export PYTHONPATH=$PYTHONPATH:$STREAMSPATH:/Users/adrian/projects/gary/build/lib.macosx-10.5-x86_64-2.7
     export PATH=$PATH:/Users/adrian/projects/gary/build/bin
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/morphology
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/scf
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/scf
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/mpipool
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/biff/build/lib.macosx-10.5-x86_64-2.7
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-2.7
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/biff/build/lib.macosx-10.5-x86_64-2.7
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-2.7
 
     # virtualenvwrapper
-    source ~/anaconda/bin/virtualenvwrapper.sh
+    # source ~/anaconda/bin/virtualenvwrapper.sh
 
 }
 
 function pythree() {
     pypath_reset
     source activate three
-    export PYTHONPATH=$PYTHONPATH:$STREAMSPATH:/Users/adrian/projects/gary/build/lib.macosx-10.5-x86_64-3.5
+    # export PYTHONPATH=$PYTHONPATH:$STREAMSPATH:/Users/adrian/projects/gary/build/lib.macosx-10.5-x86_64-3.5
     export PATH=$PATH:/Users/adrian/projects/gary/build/bin
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/morphology
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/scf
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/scf
     export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/mpipool
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/biff/build/lib.macosx-10.5-x86_64-3.5
-    export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-3.5
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/biff/build/lib.macosx-10.5-x86_64-3.5
+    # export PYTHONPATH=$PYTHONPATH:/Users/adrian/projects/ophiuchus/build/lib.macosx-10.5-x86_64-3.5
 }
 
 pythree # I'm DOING IT, MOM!!
@@ -117,3 +117,5 @@ function rawtofits {
     dcraw -D -6 -W -g 1 0 -c -j $1 > $1.pgm;
     pnmtofits $1.pgm > $1.fits;
 }
+
+export PATH=$PATH:/usr/local/texlive/2013/bin/universal-darwin/
