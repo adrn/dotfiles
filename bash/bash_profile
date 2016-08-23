@@ -20,3 +20,5 @@ then
 fi
 
 # export PATH=/usr/local/lib:/usr/local/bin:$PATH
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

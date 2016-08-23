@@ -118,4 +118,4 @@ function rawtofits {
     pnmtofits $1.pgm > $1.fits;
 }
 
-export PATH=$PATH:/usr/local/texlive/2013/bin/universal-darwin/
+export PATH=$PATH:/Library/TeX/Root/bin/universal-darwin/
