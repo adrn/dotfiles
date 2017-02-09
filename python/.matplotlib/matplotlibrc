@@ -1,10 +1,9 @@
-# Yea, get over it
-backend: Qt4Agg
-#backend.qt4: PySide
+backend: Qt5Agg
 
 # fonty stuffs
-font.family: CMU Serif
-# font.family: cmr10
+font.serif: CMU Serif
+font.family: serif
+mathtext.fontset: cm
 text.usetex: False
 text.latex.preamble: \usepackage{amsmath}
 
@@ -18,9 +17,8 @@ patch.facecolor        : k
 patch.edgecolor        : none
 
 # figure and axes
-figure.figsize: 8,6   # default figure size
-figure.facecolor: white
-figure.edgecolor: white
+figure.facecolor: ffffff
+figure.edgecolor: ffffff
 axes.facecolor: ffffff
 axes.edgecolor: 333333
 axes.formatter.limits: -7, 10  # scientific notation limits
