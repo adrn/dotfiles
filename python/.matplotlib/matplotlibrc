@@ -17,6 +17,7 @@ patch.facecolor        : 666666
 patch.edgecolor        : none
 
 # figure and axes
+figure.figsize: 12,9
 figure.facecolor: ffffff
 figure.edgecolor: ffffff
 # figure.dpi: 256
