@@ -5,7 +5,7 @@ font.serif: CMU Serif
 font.family: serif
 mathtext.fontset: cm
 text.usetex: False
-text.latex.preamble: \usepackage{amsmath}
+# text.latex.preamble: \usepackage{amsmath}
 
 # styles
 lines.linestyle        : -       # solid line
@@ -17,7 +17,7 @@ patch.facecolor        : 666666
 patch.edgecolor        : none
 
 # figure and axes
-figure.figsize: 12,9
+figure.figsize: 6, 6
 figure.facecolor: ffffff
 figure.edgecolor: ffffff
 # figure.dpi: 256
@@ -41,6 +41,9 @@ xtick.major.size: 8      # major tick size in points
 xtick.minor.size: 4      # minor tick size in points
 ytick.major.size: 8      # major tick size in points
 ytick.minor.size: 4      # minor tick size in points
+
+xtick.top: True
+ytick.right: True
 
 # the grid
 grid.color: cccccc   # grid color
