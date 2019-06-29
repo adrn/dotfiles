@@ -1,3 +1,8 @@
+Host *
+  ServerAliveInterval 240
+  UseKeychain yes
+  AddKeysToAgent yes
+
 Host nav
 User aprice-whelan
 HostName navtara.caltech.edu
@@ -123,3 +128,94 @@ Host hotfoot
 User amp2217
 HostName hpcsubmit.cc.columbia.edu
 ForwardAgent yes
+
+Host yeti
+User amp2217
+HostName yetisubmit.cc.columbia.edu
+ForwardAgent yes
+
+Host ptf
+User aprice-whelan
+HostName phares.caltech.edu
+ForwardAgent yes
+
+Host mdmarc1
+User arc
+HostName mdmarc1.kpno.noao.edu
+
+Host xsede
+User adrn
+HostName login.xsede.org
+# ForwardAgent yes
+
+Host stampede
+User adrn
+HostName stampede.tacc.xsede.org
+# ForwardAgent yes
+
+Host mdm
+User obs24m
+HostName mdm.kpno.noao.edu
+
+Host hiltner
+User obs24m
+HostName hiltner.kpno.noao.edu
+
+Host mdm24ws1
+User obs24m
+HostName mdm24ws1.kpno.noao.edu
+
+Host minos
+User adrn
+HostName minos.astro.princeton.edu
+
+Host trek
+User adrn
+HostName trek.astro.princeton.edu
+# ForwardAgent yes
+# IdentityFile ~/.ssh/id_perseus
+
+Host perseus
+    HostName perseus.princeton.edu
+    # ProxyCommand ssh trek 'exec 3<>/dev/tcp/perseus.princeton.edu/22; cat <&3 & cat >&3;kill $!'
+    User adrianp
+    ForwardAgent yes
+    IdentityFile ~/.ssh/id_perseus
+
+Host tiger
+    HostName tiger.princeton.edu
+    # ProxyCommand ssh trek 'exec 3<>/dev/tcp/perseus.princeton.edu/22; cat <&3 & cat >&3;kill $!'
+    User adrianp
+    # ForwardAgent yes
+    # IdentityFile ~/.ssh/id_perseus
+
+Host adroit
+    HostName adroit.princeton.edu
+    User adrianp
+    ForwardAgent yes
+
+Host langara
+     HostName langara.astro.princeton.edu
+     User adrn
+     ForwardAgent yes
+
+Host leda
+HostName leda.astro.princeton.edu
+User adrn
+ForwardAgent yes
+
+Host cca
+     # HostName voms.simonsfoundation.org
+     HostName gateway.flatironinstitute.org
+     User apricewhelan
+     Port 61022
+     ForwardX11 yes
+     ControlPath ~/.ssh/.%r@%h:%p
+     ControlMaster auto
+     ForwardAgent yes
+     LocalForward 127.0.0.1:49443 jupyter:443
+
+Host utah
+     HostName apogee.sdss.org
+     User u6026117
+     ForwardAgent yes
