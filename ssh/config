@@ -3,146 +3,6 @@ Host *
   UseKeychain yes
   AddKeysToAgent yes
 
-Host nav
-User aprice-whelan
-HostName navtara.caltech.edu
-ForwardAgent yes
-
-Host rv
-User rv
-HostName rv.astro.columbia.edu
-
-Host kepler
-User aprice-whelan
-HostName kepler.caltech.edu
-ForwardAgent yes
-
-Host pluto
-User adrn
-HostName pluto.astro.columbia.edu
-ForwardAgent yes
-
-Host deimos
-User adrian
-Port 2213
-HostName deimos.astro.columbia.edu
-ForwardAgent yes
-
-Host astrometry
-User apw235
-HostName astrometry.net
-Port 22
-
-Host astrometry.net
-Port 22
-User apw235
-
-Host sdss-db
-User aprice-whelan
-HostName sdss-db-p.apo.nmsu.edu
-Port 22
-
-Host fornax
-User adrian
-HostName fornax.cosmo.fas.nyu.edu
-Port 2213
-ForwardAgent yes
-
-Host astro
-User apw235
-HostName astro.physics.nyu.edu
-Port 4426
-ForwardAgent yes
-
-Host samba
-User apw235
-HostName samba.physics.nyu.edu
-
-Host howdy.physics.nyu.edu
-User apw235
-Port 4426
-ForwardAgent yes
-
-Host howdy
-User apw235
-HostName howdy.physics.nyu.edu
-Port 4426
-ForwardAgent yes
-
-Host bias
-User apw235
-HostName bias.cosmo.fas.nyu.edu
-Port 4426
-ForwardAgent yes
-
-Host virgo
-User apw235
-HostName virgo.cosmo.fas.nyu.edu
-Port 22
-
-Host bootes
-User apw235
-HostName bootes.cosmo.fas.nyu.edu
-Port 22
-
-Host sculptor
-User apw235
-HostName sculptor.cosmo.fas.nyu.edu
-
-Host hydra
-User apw235
-HostName hydra.cosmo.fas.nyu.edu
-Port 2213
-ForwardAgent yes
-
-Host broiler
-User apw235
-HostName broiler.cosmo.fas.nyu.edu
-
-Host astro16
-User apw235
-HostName astro16.cosmo.fas.nyu.edu
-
-Host sdss3data
-User apwhelan
-HostName sdss3data.lbl.gov
-Port 22
-
-Host riemann
-User apwhelan
-HostName riemann.lbl.gov
-Port 22
-
-Host icenine
-User adrian
-HostName icenine.cosmo.fas.nyu.edu
-Port 2213
-ForwardAgent yes
-
-Host sdss3.org
-HostName sdss3.org
-Port 22
-User aprice-whelan
-
-Host hotfoot
-User amp2217
-HostName hpcsubmit.cc.columbia.edu
-ForwardAgent yes
-
-Host yeti
-User amp2217
-HostName yetisubmit.cc.columbia.edu
-ForwardAgent yes
-
-Host ptf
-User aprice-whelan
-HostName phares.caltech.edu
-ForwardAgent yes
-
-Host mdmarc1
-User arc
-HostName mdmarc1.kpno.noao.edu
-
 Host xsede
 User adrn
 HostName login.xsede.org
@@ -165,45 +25,6 @@ Host mdm24ws1
 User obs24m
 HostName mdm24ws1.kpno.noao.edu
 
-Host minos
-User adrn
-HostName minos.astro.princeton.edu
-
-Host trek
-User adrn
-HostName trek.astro.princeton.edu
-# ForwardAgent yes
-# IdentityFile ~/.ssh/id_perseus
-
-Host perseus
-    HostName perseus.princeton.edu
-    # ProxyCommand ssh trek 'exec 3<>/dev/tcp/perseus.princeton.edu/22; cat <&3 & cat >&3;kill $!'
-    User adrianp
-    ForwardAgent yes
-    IdentityFile ~/.ssh/id_perseus
-
-Host tiger
-    HostName tiger.princeton.edu
-    # ProxyCommand ssh trek 'exec 3<>/dev/tcp/perseus.princeton.edu/22; cat <&3 & cat >&3;kill $!'
-    User adrianp
-    # ForwardAgent yes
-    # IdentityFile ~/.ssh/id_perseus
-
-Host adroit
-    HostName adroit.princeton.edu
-    User adrianp
-    ForwardAgent yes
-
-Host langara
-     HostName langara.astro.princeton.edu
-     User adrn
-     ForwardAgent yes
-
-Host leda
-HostName leda.astro.princeton.edu
-User adrn
-ForwardAgent yes
-
 Host cca
      # HostName voms.simonsfoundation.org
      HostName gateway.flatironinstitute.org
@@ -219,3 +40,13 @@ Host utah
      HostName apogee.sdss.org
      User u6026117
      ForwardAgent yes
+
+Host imac
+     HostName ccamac094.flatironinstitute.org
+     User apricewhelan
+     ForwardX11 yes
+     ForwardAgent yes
+     LocalForward localhost:8889 localhost:8889
+
+Host rusty
+     HostName rusty.flatironinstitute.org

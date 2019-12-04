@@ -1,7 +1,7 @@
 backend: Qt5Agg
 
 # fonty stuffs
-font.serif: CMU Serif
+font.serif: Old Standard TT
 font.family: serif
 mathtext.fontset: cm
 text.usetex: False
@@ -18,10 +18,10 @@ patch.edgecolor        : none
 
 # figure and axes
 figure.figsize: 6, 6
-figure.facecolor: ffffff
+figure.facecolor: w
 figure.edgecolor: ffffff
-# figure.dpi: 256
-figure.dpi: 100
+figure.dpi: 256
+# figure.dpi: 100
 axes.facecolor: ffffff
 axes.edgecolor: 333333
 axes.formatter.limits: -7, 10  # scientific notation limits
@@ -52,3 +52,5 @@ grid.linewidth: 0.75     # in points
 
 # color
 # axes.prop_cycle: cycler('color', ['1A1A1A', '2166AC', '006837', 'B2182B', '762A83', 'E08214', '80CDC1', 'C51B7D', 'FEE08B'])
+
+image.cmap: magma

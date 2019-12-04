@@ -12,3 +12,6 @@
 *.blg
 *.top
 *.tui
+.ipynb_checkpoints
+*.code-workspace
+.vscode
